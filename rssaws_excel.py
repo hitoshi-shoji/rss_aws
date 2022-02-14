@@ -25,6 +25,7 @@ sheet['C2'].value = 'サービス'
 sheet['D2'].value = 'アップデートタイトル'
 sheet['E2'].value = '概要'
 sheet['F2'].value = '調査対象'
+sheet.auto_filter.ref = "A2:F2"
 
 for abc in ['A','B','C','D','E','F']:
     sheet[abc + '2'].font = Font(name='Meiryo',size='10',bold=True)
@@ -36,7 +37,7 @@ db = sqlite3.connect('rssaws.db')
 cur = db.cursor()
 cur.execute('SELECT no,published,category,title,url,summary FROM RSS_Table order by published desc')
 for i, row in enumerate (cur):
-    sheet['A' + str(i+3)].value = row[0] 
+    sheet['A' + str(i+3)].value =  (i+1)
     sheet['B' + str(i+3)].value = row[1] 
     sheet['C' + str(i+3)].value = row[2] 
     sheet['D' + str(i+3)].value = row[3] 
@@ -82,7 +83,7 @@ sheet.column_dimensions['C'].width = 20
 sheet.column_dimensions['D'].width = 55 
 sheet.column_dimensions['E'].width = 82 
 sheet.column_dimensions['F'].width = 12 
-
+sheet.freeze_panes = 'A3'
 
 now = datetime.datetime.now()
 filename = settings.output_excelfile + now.strftime('%Y%m%d_%H%M%S') + '.xlsx'
