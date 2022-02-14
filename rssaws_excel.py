@@ -86,5 +86,5 @@ sheet.column_dimensions['F'].width = 12
 sheet.freeze_panes = 'A3'
 
 now = datetime.datetime.now()
-filename = settings.output_excelfile + now.strftime('%Y%m%d_%H%M%S') + '.xlsx'
+filename = settings.output_path + 'aws-rss-new_' + now.strftime('%Y%m%d.%H%M%S') + '.xlsx'
 workbook.save(filename)
