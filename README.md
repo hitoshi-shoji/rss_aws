@@ -29,12 +29,17 @@ $ pip install -r requirements.txt
 ```
 ## 「rss_url」 は、RSS URLを指定
 ## 日本語は、"https://aws.amazon.com/jp/about-aws/whats-new/recent/feed/"  
-rss_url="https://aws.amazon.com/about-aws/whats-new/recent/feed/" 
-## 「sqlite_dbname」は、データ格納用sqlite3 DB名(ファイル名) です。
-sqlite_dbname="rssaws.db"
-## 「output_path」は、Excelファイルの出力先ディレクトリーです。
-##  指定Pathは、事前に作成しておいてください。
-##  Excelファイル名は、aws-rss-new_YYYYMMDD.HHMMSS.xlsx 固定です。
+##
+rss_url="https://aws.amazon.com/about-aws/whats-new/recent/feed/"  
+##
+## 「sqlite_dbname」は、データ格納用sqlite3 DB名(ファイル名) 
+##
+sqlite_dbname="rssaws.db"  
+##
+## 「output_path」は、Excelファイルの出力先ディレクトリー
+##  指定Pathは、事前に作成しておいてください
+##  Excelファイル名は、aws-rss-new_YYYYMMDD.HHMMSS.xlsx 固定
+##
 output_path="/home/ec2-user/"
 ```
 
@@ -43,7 +48,8 @@ output_path="/home/ec2-user/"
 # What's new RSS URLから取得した情報をsqlite3 DB (テーブル:RSS_Table)へINSERT
 $ python rss_save_db.py
 or
-$ python3 rss_save_db.py
+$ python3 rss_save_db.py  
+
 # sqllite3 DB(テーブル：RSS_Table)から全レコードを取得して、Excelファイル作成
 $ python rssaws_excel.py
 or
