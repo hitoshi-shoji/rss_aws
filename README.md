@@ -1,7 +1,7 @@
 ## rss_aws
 
-### (機能1) AWS What's New　RSS情報を取得して、sqlite3 DB(テーブル)へINSERTします。
-### (機能2) sqlite3 DB(テーブル)のRSS情報全レコードを取得し、AWS What's New情報リスト(Excelファイル)を生成します。
+(機能1) AWS What's New　RSS情報を取得して、sqlite3 DB(テーブル)へINSERTします。
+(機能2) sqlite3 DB(テーブル)のRSS情報全レコードを取得し、AWS What's New情報リスト(Excelファイル)を生成します。
 
 ### 環境
 Ubuntu 18.04.6 LTS (Bionic Beaver)  
@@ -16,12 +16,14 @@ python3.8.0
 $ git clone https://github.com/hitoshi-shoji/rss_aws.git
 $ cd rss_aws
 ```
+
 ### 2. モジュールインストール
 ```
 $ pip3 install -r requirements.txt  
 or
 $ pip install -r requirements.txt
 ```
+
 ### 3. 設定ファイル(settings.py)
 #### settingsファイルを開いて設定内容を編集します。
 ```
@@ -34,6 +36,7 @@ sqlite_dbname="rssaws.db"
 ##  指定Pathは、事前に作成しておいてください。
 ##  Excelファイル名は、aws-rss-new_YYYYMMDD.HHMMSS.xlsx 固定です。
 output_path="/home/ec2-user/"
+```
 
 ### 4. 実行方法
 ```
