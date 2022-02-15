@@ -10,4 +10,4 @@ sqlite_dbname="rssaws.db"
 ## 「output_path」は、Excelファイルの出力先ディレクトリー
 ##  指定Pathは、事前に作成しておいてください
 ##  Excelファイル名は、aws-rss-new_YYYYMMDD.HHMMSS.xlsx 固定
-output_path="/mnt/c/Users/hitshoji/Desktop/"
+output_path="/home/ubuntu/"
